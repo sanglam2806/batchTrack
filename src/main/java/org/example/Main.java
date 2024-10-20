@@ -1,5 +1,16 @@
-package org.example;public class Main {
+package org.example;
+
+import org.example.object.AppWrapper;
+import org.example.process.Scraper;
+import org.example.process.YamlParser;
+
+public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        YamlParser yamlParser = new YamlParser();
+        AppWrapper appWrapper = yamlParser.loadObject();
+
+        if(appWrapper != null) {
+            System.out.println(Scraper.extractExcecutionTime(appWrapper));
+        }
     }
 }

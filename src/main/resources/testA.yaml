@@ -1,6 +1,5 @@
-person:
-  name: John Doe
-  age: 30
-  address:
-    city: New York
-    zip: 10001
+name: John Doe
+age: 30
+address:
+  city: New York
+  zip: 10001

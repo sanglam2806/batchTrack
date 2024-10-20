@@ -1,5 +1,13 @@
-appName: "WJ2736"
-jobNets:
-  - name: "JNWJ2736_001"
-    jobStart: "WJ2736-01"
-    jobEnd: "WJ2736-07"
+apps:
+  - appName: "WJ2736"
+    jobNets:
+    - name: "JNWJ2736_001"
+      jobStart:
+        name: "WJ2736-01"
+      jobEnd:
+        name: "WJ2736-07"
+    - name: "JNWJ2736_002"
+      jobStart:
+        name: "WJ2736-01"
+      jobEnd:
+        name: "WJ2736-07"

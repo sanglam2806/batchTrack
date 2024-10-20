@@ -1,30 +1,27 @@
 package org.example.process;
 
 import org.example.object.App;
-import org.example.object.Customer;
-import org.yaml.snakeyaml.LoaderOptions;
+import org.example.object.AppWrapper;
 import org.yaml.snakeyaml.Yaml;
-import org.yaml.snakeyaml.constructor.Constructor;
 
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-public class Yamljobnet {
+public class YamlParser {
+    final private static String YAML_PATH = "jobnet.yaml";
 
-    final private static String YAML_PATH = "./jobnet.yaml";
-
-    public void loadObject() {
-//        Yaml yaml = new Yaml(new Constructor(App.class, new LoaderOptions()));
-//        InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(YAML_PATH);
-////                    new FileInputStream(YAML_PATH);
-//        App wj2736 = yaml.load(inputStream);
-
+    public AppWrapper loadObject(){
         Yaml yaml = new Yaml();
-        InputStream inputStream = this.getClass()
+        InputStream inputStream = YamlParser.class
                 .getClassLoader()
-                .getResourceAsStream("./test.Yaml");
-        Customer customer = yaml.loadAs(inputStream, Customer.class);
+                .getResourceAsStream(YAML_PATH);
 
+        if (inputStream == null) {
+            System.out.println("cant not red data");
+            return null;
+        }
 
-        System.out.println(customer);
+       return yaml.loadAs(inputStream, AppWrapper.class);
     }
 }
+
