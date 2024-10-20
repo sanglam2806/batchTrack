@@ -1,0 +1,5 @@
+appName: "WJ2736"
+jobNets:
+  - name: "JNWJ2736_001"
+    jobStart: "WJ2736-01"
+    jobEnd: "WJ2736-07"
